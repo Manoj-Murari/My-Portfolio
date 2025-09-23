@@ -9,7 +9,7 @@ const Projects = () => {
       description: "An advanced AI agent that autonomously navigates websites to execute complex tasks. It leverages a Gemini-based reasoning engine and computer vision to interpret dynamic UIs, handle multi-step workflows, and perform intelligent error recovery.",
       tech: ["Python", "Selenium", "Gemini API", "Computer Vision", "AsyncIO"],
       metrics: ["Automates Workflows", "Scalable Design", "High-Accuracy Vision"],
-      githubUrl: "https://github.com/Manoj-Murari/Project-Mini", // Make sure this link is correct
+      githubUrl: "https://github.com/Manoj-Murari/AI-Web-Assistant",
       type: "github"
     },
     {
@@ -17,7 +17,7 @@ const Projects = () => {
       description: "A developer tool that ingests entire codebases and generates interactive dependency graphs. By parsing the source code into an Abstract Syntax Tree (AST), it provides deep structural analysis to help developers visualize architecture and accelerate code comprehension.",
       tech: ["TypeScript", "React", "AST Parsing", "Tree-sitter"],
       metrics: ["Large Codebase Support", "Real-time Analysis", "Reveals Dependencies"],
-      githubUrl: "https://github.com/Manoj-Murari/CodeGrapher", // Make sure this link is correct
+      githubUrl: "https://github.com/Manoj-Murari/CodeGrapher",
       type: "github"
     },
     {
@@ -26,7 +26,7 @@ const Projects = () => {
       tech: ["React", "Firebase", "Node.js", "Full-Stack"],
       metrics: ["Built for Scale", "Production Deployed", "Real-time Sync"],
       liveUrl: "https://ourkandukur.com",
-      githubUrl: "https://github.com/Manoj-Murari/ourkandukur", // Add GitHub link if available
+      githubUrl: "https://github.com/Manoj-Murari/Our-Kandukur-StartUp",
       type: "live"
     }
   ];
@@ -84,30 +84,20 @@ const Projects = () => {
                 
                 <div className="flex gap-4">
                   {project.liveUrl && (
-                    <Button variant="outline" asChild className="border-border hover:bg-[hsl(var(--space-border))]">
-                      <a 
-                        href={project.liveUrl} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2"
-                      >
-                        <ExternalLink className="w-4 h-4" />
+                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                      <Button variant="outline" className="border-border hover:bg-[hsl(var(--space-border))] w-full">
+                        <ExternalLink className="w-4 h-4 mr-2" />
                         Live Site
-                      </a>
-                    </Button>
+                      </Button>
+                    </a>
                   )}
                   {project.githubUrl && (
-                    <Button variant="outline" asChild className="border-border hover:bg-[hsl(var(--space-border))]">
-                      <a 
-                        href={project.githubUrl} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2"
-                      >
-                        <Github className="w-4 h-4" />
+                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                      <Button variant="outline" className="border-border hover:bg-[hsl(var(--space-border))] w-full">
+                        <Github className="w-4 h-4 mr-2" />
                         View Code
-                      </a>
-                    </Button>
+                      </Button>
+                    </a>
                   )}
                 </div>
               </CardContent>
