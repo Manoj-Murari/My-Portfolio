@@ -32,7 +32,7 @@ const Hero = () => {
           asChild
           className="magnetic-hover bg-accent-primary hover:bg-accent-secondary text-white px-8 py-4 text-lg rounded-full font-medium fade-in transition-all duration-300 shadow-lg hover:shadow-accent-primary/25"
         >
-          <a href="mailto:manojmurari357@gmail.com" className="inline-flex items-center gap-2">
+          <a href="mailto:manojmurari3571@gmail.com" className="inline-flex items-center gap-2">
             Get In Touch
             <ArrowRight className="w-5 h-5" />
           </a>
