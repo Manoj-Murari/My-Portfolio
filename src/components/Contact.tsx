@@ -9,10 +9,10 @@ const Contact = () => {
         </h2>
         
         <a 
-          href="mailto:manojmurari357@gmail.com"
+          href="mailto:manoj.murari.001@gmail.com"
           className="text-2xl md:text-3xl text-light-primary hover:text-accent-primary transition-colors duration-300 underline-reveal mb-16 inline-block fade-in font-medium"
         >
-          manojmurari357@gmail.com
+          manoj.murari.001@gmail.com
         </a>
         
         <div className="flex justify-center gap-8 fade-in">
@@ -27,7 +27,7 @@ const Contact = () => {
           </a>
           
           <a 
-            href="https://github.com/manojmurari" 
+            href="https://github.com/Manoj-Murari/" 
             target="_blank" 
             rel="noopener noreferrer"
             className="svg-animate p-4 hover:bg-accent-primary/10 hover:text-accent-primary rounded-full transition-all duration-300 border border-transparent hover:border-accent-primary/20"
@@ -37,7 +37,7 @@ const Contact = () => {
           </a>
           
           <a 
-            href="mailto:manojmurari357@gmail.com"
+            href="mailto:manoj.murari.001@gmail.com"
             className="svg-animate p-4 hover:bg-accent-primary/10 hover:text-accent-primary rounded-full transition-all duration-300 border border-transparent hover:border-accent-primary/20"
             aria-label="Send Email"
           >
