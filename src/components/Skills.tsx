@@ -1,97 +1,88 @@
-import { Code2, Database, Brain, Zap, Globe, Shield } from "lucide-react";
+import React from "react";
+import { Brain, Code2, Database, Cloud, Rocket, Wrench } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const Skills = () => {
   const skillCategories = [
-    {
-      icon: <Brain className="w-8 h-8" />,
-      title: "AI & Machine Learning",
-      skills: ["OpenAI GPT-4", "Computer Vision", "Neural Networks", "NLP", "MLOps"],
-      proficiency: 95
+     {
+      icon: <Brain />,
+      title: "AI / ML Engineering",
+      skills: [
+        "LLMs", "RAG Systems", "Agentic Workflows", "Model Context Protocol", "Prompt Engineering" ,
+        "LangChain", "LangGraph",
+        "LlamaIndex", "Transformers", "NLP", "Computer Vision",
+      ],
     },
     {
-      icon: <Code2 className="w-8 h-8" />,
-      title: "Full-Stack Development", 
-      skills: ["TypeScript", "React", "Node.js", "Python", "Next.js"],
-      proficiency: 90
+      icon: <Code2 />,
+      title: "Frontend Development",
+      skills: [
+        "React.js", "Next.js", "TypeScript", "JavaScript", "HTML/CSS",
+        "Tailwind CSS", "Chrome Extensions"
+      ],
     },
     {
-      icon: <Database className="w-8 h-8" />,
-      title: "Data & Infrastructure",
-      skills: ["PostgreSQL", "Redis", "Docker", "AWS", "Microservices"],
-      proficiency: 85
+      icon: <Rocket />,
+      title: "Backend Development",
+      skills: ["Python", "Flask", "FastAPI", "Node.js", "Express.js"],
     },
     {
-      icon: <Zap className="w-8 h-8" />,
-      title: "Performance Engineering",
-      skills: ["WebAssembly", "Edge Computing", "CDN", "Caching", "Optimization"],
-      proficiency: 88
+      icon: <Database />,
+      title: "Databases & Data",
+      skills: [
+        "SQL", "Redis", "Vector Databases",
+        "Neo4j", "Power BI", "Streamlit"
+      ],
     },
     {
-      icon: <Globe className="w-8 h-8" />,
-      title: "Web Technologies",
-      skills: ["Web APIs", "WebRTC", "PWA", "Service Workers", "WebGL"],
-      proficiency: 82
+      icon: <Cloud />,
+      title: "Cloud & DevOps",
+      skills: [
+        "Docker", "GCP", "AWS", "Firebase", "Supabase", "Vercel",
+        "Netlify", "GitHub Actions", "Hostingial" // Corrected typo if needed
+      ],
     },
     {
-      icon: <Shield className="w-8 h-8" />,
-      title: "Security & DevOps",
-      skills: ["CI/CD", "Kubernetes", "Security", "Monitoring", "Testing"],
-      proficiency: 80
+      icon: <Wrench />,
+      title: "Tools & Methodologies",
+      skills: [
+        "Git/GitHub", "VS Code/Cursor", "Agile/Scrum", "Pytest","Google AI Studio"
+      ],
     }
   ];
 
   return (
     <section id="skills" className="py-32 px-4">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl mx-auto"> {/* Use wider container */}
         <h2 className="text-4xl md:text-6xl font-light mb-20 text-center fade-in text-light-primary">
           Technical Expertise
         </h2>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 stagger-children">
+
+        {/* Enhanced Two-Column Grid Layout with Hover Effects */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
           {skillCategories.map((category, index) => (
             <div
               key={category.title}
-              className="group relative p-8 bg-card border border-border rounded-lg hover:border-accent-primary/30 transition-all duration-300 fade-in"
-              style={{ '--stagger-index': index } as React.CSSProperties}
+              // Added group class, transition, hover transform & shadow
+              className="group fade-in border-l-2 border-accent-primary/30 pl-6 py-4 transition-all duration-300 ease-out hover:border-accent-primary hover:-translate-y-2 hover:shadow-2xl hover:shadow-accent-primary/10 rounded-r-lg" // Added slight rounding
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
-              {/* Icon */}
-              <div className="text-accent-primary mb-6 group-hover:scale-110 transition-transform duration-300">
-                {category.icon}
-              </div>
-              
-              {/* Title */}
-              <h3 className="text-xl font-medium mb-4 text-light-primary">
-                {category.title}
+              <h3 className="flex items-center gap-3 text-xl font-medium mb-4 text-light-primary">
+                {React.cloneElement(category.icon, { className: "w-5 h-5 text-accent-primary shrink-0 transition-transform duration-300 group-hover:scale-110" })} {/* Icon scale on hover */}
+                {/* Added underline-reveal span */}
+                <span className="underline-reveal">{category.title}</span>
               </h3>
-              
-              {/* Skills */}
-              <div className="flex flex-wrap gap-2 mb-6">
+              <div className="flex flex-wrap gap-2">
                 {category.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="px-3 py-1 text-sm bg-muted/50 text-light-secondary rounded-full transition-colors hover:bg-accent-primary/20 hover:text-accent-primary"
+                    // Enhanced tag style with interactive hover
+                    className="inline-block px-3 py-1 text-sm bg-card border border-border text-light-secondary rounded-full transition-all duration-200 hover:bg-accent-primary/10 hover:text-accent-primary hover:border-accent-primary/30 hover:scale-[1.03]"
                   >
                     {skill}
                   </span>
                 ))}
               </div>
-              
-              {/* Proficiency Bar */}
-              <div className="space-y-2">
-                <div className="flex justify-between text-sm">
-                  <span className="text-light-tertiary">Proficiency</span>
-                  <span className="text-accent-primary font-medium">{category.proficiency}%</span>
-                </div>
-                <div className="w-full bg-muted rounded-full h-2">
-                  <div 
-                    className="bg-gradient-to-r from-accent-primary to-accent-secondary h-2 rounded-full transition-all duration-1000 group-hover:from-accent-secondary group-hover:to-accent-primary"
-                    style={{ width: `${category.proficiency}%` }}
-                  />
-                </div>
-              </div>
-              
-              {/* Hover Effect */}
-              <div className="absolute inset-0 bg-accent-primary/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
             </div>
           ))}
         </div>
